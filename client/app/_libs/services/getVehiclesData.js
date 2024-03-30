@@ -1,5 +1,5 @@
 "use server";
-const getvehiclesData = async () => {
+const getVehiclesData = async () => {
   const response = await fetch(
     "https://exam-server-7c41747804bf.herokuapp.com/carsList"
   );
@@ -11,4 +11,4 @@ const getvehiclesData = async () => {
   return response.json();
 };
 
-export default getvehiclesData;
+export default getVehiclesData;

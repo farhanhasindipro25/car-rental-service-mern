@@ -2,23 +2,37 @@
 import React from "react";
 import SelectField from "../ui/SelectField";
 import { useQuery } from "@tanstack/react-query";
-import getvehiclesData from "../../services/getVehiclesData";
 import { generateLabelAndValueForSearchAndSelectField } from "../../utils/generateLabelAndValueForSearchAndSelectField";
 import { generateLabelAndValueForVehicleType } from "../../utils/generateLabelandValueForVehicleType";
+import VehicleFormSkeleton from "../skeletons/VehicleFormSkeleton";
+import VehicleFormError from "../errors/VehicleFormError";
+import getVehiclesData from "../../services/getVehiclesData";
 
-export default function VehicleInformationForm() {
+export default function VehicleInformationForm({ formData, setFormData }) {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["/vehicles"],
-    queryFn: () => getvehiclesData(),
+    queryFn: () => getVehiclesData(),
   });
-  if (isLoading) return "Loading...";
-  if (isError) return "Something went wrong!";
-  console.log(data?.data);
+  if (isLoading) return <VehicleFormSkeleton />;
+  if (isError) return <VehicleFormError />;
   const vehicleOptions = generateLabelAndValueForSearchAndSelectField(
     data?.data
   );
   const typeOptions = generateLabelAndValueForVehicleType(data?.data);
-  console.log(typeOptions);
+
+  const handleVehicleTypeChange = (selectedOption) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      vehicle_type: selectedOption,
+    }));
+  };
+  const handleVehicleChange = (selectedOption) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      vehicle: selectedOption,
+    }));
+  };
+
   return (
     <div className="space-y-4 w-full">
       <h2 className="text-lg font-semibold border-b border-indigo-500">
@@ -30,12 +44,16 @@ export default function VehicleInformationForm() {
           id="vehicle_type"
           label="Vehicle Type*"
           options={typeOptions}
+          value={formData.vehicle_type || ""}
+          onChange={handleVehicleTypeChange}
         />
         <SelectField
           name="vehicle"
           id="vehicle"
           label="Vehicle*"
           options={vehicleOptions}
+          value={formData.vehicle || ""}
+          onChange={handleVehicleChange}
         />
       </form>
     </div>
