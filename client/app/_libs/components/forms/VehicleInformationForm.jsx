@@ -7,7 +7,7 @@ export default function VehicleInformationForm() {
       <h2 className="text-lg font-semibold border-b border-indigo-500">
         Vehicle Information
       </h2>
-      <form className="p-4 space-y-4 rounded-lg border border-gray-300">
+      <form className="p-4 space-y-4 rounded-lg border border-indigo-200">
         <SelectField
           name="vehicle_type"
           id="vehicle_type"

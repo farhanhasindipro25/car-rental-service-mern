@@ -8,7 +8,7 @@ export default function ReservationDetailsForm() {
       <h2 className="text-lg font-semibold border-b border-indigo-500">
         Reservation Details
       </h2>
-      <form className="p-4 space-y-4 rounded-lg border border-gray-300">
+      <form className="p-4 space-y-4 rounded-lg border border-indigo-200">
         <TextInputField
           name="reservation_id"
           id="reservation_id"

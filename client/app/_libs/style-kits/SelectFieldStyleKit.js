@@ -4,9 +4,11 @@ export const SELECT_LABEL_STYLES =
 export const customStyles = {
   control: (provided, state) => ({
     ...provided,
-    borderColor: state.isFocused ? "rgba(5, 150, 105)" : provided.borderColor,
+    borderColor: state.isFocused
+      ? "rgba(199, 210, 254, 1)"
+      : provided.borderColor,
     boxShadow: state.isFocused
-      ? "0 0 0 2px rgba(25, 200, 105)"
+      ? "0 0 0 2px rgba(99, 102, 241, 1)"
       : provided.boxShadow,
     border: state.isFocused ? "none" : provided.border,
     paddingTop: "3px",
@@ -16,14 +18,14 @@ export const customStyles = {
     ...provided,
     backgroundColor:
       (state.isFocused || state.isSelected) && !state.isMulti
-        ? "rgb(5, 150, 105)"
+        ? "rgb(99, 102, 241)"
         : provided.backgroundColor,
     color:
       (state.isFocused || state.isSelected) && !state.isMulti
         ? "white"
-        : "rgb(15, 23, 42)",
+        : "rgb(99, 102, 241)",
     "&:hover": {
-      backgroundColor: "rgb(4, 120, 87)",
+      backgroundColor: "rgb(99, 102, 241)",
       color: "white",
       cursor: "pointer",
     },
@@ -32,7 +34,7 @@ export const customStyles = {
   }),
   singleValue: (provided) => ({
     ...provided,
-    color: "rgb(15, 23, 42)",
+    color: "rgb(99, 102, 241)",
   }),
   menu: (provided) => ({
     ...provided,

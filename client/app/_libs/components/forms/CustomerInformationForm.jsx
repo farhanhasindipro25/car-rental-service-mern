@@ -7,7 +7,7 @@ export default function CustomerInformationForm() {
       <h2 className="text-lg font-semibold border-b border-indigo-500">
         Customer Information
       </h2>
-      <form className="p-4 space-y-4 rounded-lg border border-gray-300">
+      <form className="p-4 space-y-4 rounded-lg border border-indigo-200">
         <TextInputField
           name="first_name"
           id="first_name"
