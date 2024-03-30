@@ -23,8 +23,9 @@ const rentalSchema = new Schema(
       type: String,
       required: true,
     },
-    vehicle: {
-      type: String,
+    vehicle_id: {
+      type: Schema.Types.ObjectId,
+      ref: "Vehicle",
       required: true,
     },
     first_name: {

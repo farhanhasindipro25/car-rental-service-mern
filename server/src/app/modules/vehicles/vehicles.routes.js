@@ -1,7 +1,7 @@
 const express = require("express");
-const { getVehicles } = require("./vehicles.controller");
+const { getVehicleData } = require("./vehicles.controller");
 const vehiclesRouter = express.Router();
 
-vehiclesRouter.get("/", getVehicles);
+vehiclesRouter.get("/", getVehicleData);
 
 module.exports = { vehiclesRouter };

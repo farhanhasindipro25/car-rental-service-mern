@@ -1,6 +1,6 @@
 const { GET_VEHICLES } = require("./vehicles.services");
 
-const getVehicles = async (req, res) => {
+const getVehicleData = async (req, res) => {
   try {
     const vehicles = await GET_VEHICLES();
     res.status(200).json(vehicles);
@@ -9,4 +9,4 @@ const getVehicles = async (req, res) => {
   }
 };
 
-module.exports = { getVehicles };
+module.exports = { getVehicleData };
