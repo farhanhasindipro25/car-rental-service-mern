@@ -9,7 +9,7 @@ export default function TextInputField(props) {
     type = "text",
     name,
     id,
-    label,
+    label = "",
     placeholder,
     className,
     value,
@@ -18,10 +18,18 @@ export default function TextInputField(props) {
   } = props;
 
   const INPUT_FIELD_STYLES = cn(INPUT_BOX_STYLES, className);
+  const isRequired = label.includes("*");
   return (
     <div className="flex flex-col w-full gap-1">
       <label htmlFor={id} className={INPUT_LABEL_STYLES}>
-        {label}
+        {isRequired === false ? (
+          label
+        ) : (
+          <div className="flex">
+            {label.split("*")[0]}
+            <span className="text-red-500">*</span>
+          </div>
+        )}
       </label>
       <input
         type={type}

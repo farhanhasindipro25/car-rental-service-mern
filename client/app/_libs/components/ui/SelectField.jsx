@@ -21,6 +21,7 @@ export default function SelectField(props) {
     isMulti = false,
     isClearable = false,
   } = props;
+  const isRequired = label.includes("*");
 
   return (
     <div
@@ -30,7 +31,14 @@ export default function SelectField(props) {
       }}
     >
       <label htmlFor={id} className={SELECT_LABEL_STYLES}>
-        {label}
+        {isRequired === false ? (
+          label
+        ) : (
+          <div className="flex">
+            {label.split("*")[0]}
+            <span className="text-red-500">*</span>
+          </div>
+        )}
       </label>
 
       <Select

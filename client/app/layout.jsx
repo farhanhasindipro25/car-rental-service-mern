@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={font.className}>
         <main>
-          <TanstackQueryProvider>{children}</TanstackQueryProvider>
+          <TanstackQueryProvider>
+            <div className="bg-white">{children}</div>
+          </TanstackQueryProvider>
         </main>
       </body>
     </html>
