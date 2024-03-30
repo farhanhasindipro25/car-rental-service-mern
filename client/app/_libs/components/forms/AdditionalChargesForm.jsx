@@ -9,7 +9,6 @@ export default function AdditionalChargesForm({ formData, setFormData }) {
       [name]: value,
     }));
   };
-  console.log(formData);
   return (
     <div className="space-y-4 w-full">
       <h2 className="text-lg font-semibold border-b border-indigo-500">
