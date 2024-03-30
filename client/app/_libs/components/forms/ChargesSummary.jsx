@@ -6,7 +6,7 @@ export default function ChargesSummary() {
       <h2 className="text-lg font-semibold border-b border-indigo-500">
         Charges Summary
       </h2>
-      <table className="min-w-full divide-y divide-indigo-500">
+      <table className="min-w-full divide-y rounded-md divide-indigo-500">
         <thead>
           <tr className="bg-indigo-200">
             <th
@@ -37,16 +37,16 @@ export default function ChargesSummary() {
         </thead>
         <tbody className="bg-indigo-200 divide-y divide-indigo-500">
           <tr>
-            <td className="p-4 text-sm font-medium text-left text-gray-700 whitespace-nowrap">
+            <td className="p-4 text-sm font-normal text-left text-gray-700 whitespace-nowrap">
               Daily
             </td>
-            <td className="p-4 text-sm font-medium text-left text-gray-700 whitespace-nowrap">
+            <td className="p-4 text-sm font-normal text-left text-gray-700 whitespace-nowrap">
               1
             </td>
-            <td className="p-4 text-sm font-medium text-left text-gray-700 whitespace-nowrap">
+            <td className="p-4 text-sm font-normal text-left text-gray-700 whitespace-nowrap">
               $99.00
             </td>
-            <td className="p-4 text-sm font-medium text-left text-gray-700 whitespace-nowrap">
+            <td className="p-4 text-sm font-normal text-left text-gray-700 whitespace-nowrap">
               $99.00
             </td>
           </tr>
