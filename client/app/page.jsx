@@ -1,4 +1,5 @@
 import AdditionalChargesForm from "./_libs/components/forms/AdditionalChargesForm";
+import ChargesSummary from "./_libs/components/forms/ChargesSummary";
 import CustomerInformationForm from "./_libs/components/forms/CustomerInformationForm";
 import ReservationDetailsForm from "./_libs/components/forms/ReservationDetailsForm";
 import VehicleInformationForm from "./_libs/components/forms/VehicleInformationForm";
@@ -21,8 +22,7 @@ export default function Home() {
           <AdditionalChargesForm />
         </div>
         <div className="space-y-4">
-          <ReservationDetailsForm />
-          <VehicleInformationForm />
+          <ChargesSummary />
         </div>
       </div>
     </div>
