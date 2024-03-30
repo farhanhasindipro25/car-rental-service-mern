@@ -1,5 +1,8 @@
+import { CHECKBOX_STYLES } from "../../style-kits/CheckboxInputFieldStyleKit";
+
 export default function CheckboxInputField(props) {
   const { name, id, label, onClick, checked, onChange, onBlur } = props;
+  const priceSeparatedLabel = label.split("-");
   return (
     <div className="flex items-center gap-2">
       <input
@@ -14,10 +17,13 @@ export default function CheckboxInputField(props) {
       />
 
       <label
-        className="text-sm font-medium text-gray-700 cursor-pointer"
+        className="text-sm font-medium text-gray-700 cursor-pointer w-full"
         htmlFor={id}
       >
-        {label}
+        <div className="w-full flex justify-between">
+          <h2>{priceSeparatedLabel[0]}</h2>
+          <h2>{priceSeparatedLabel[1]}</h2>
+        </div>
       </label>
     </div>
   );

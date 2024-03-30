@@ -1,4 +1,7 @@
+import AdditionalChargesForm from "./_libs/components/forms/AdditionalChargesForm";
+import CustomerInformationForm from "./_libs/components/forms/CustomerInformationForm";
 import ReservationDetailsForm from "./_libs/components/forms/ReservationDetailsForm";
+import VehicleInformationForm from "./_libs/components/forms/VehicleInformationForm";
 import Button from "./_libs/components/ui/Button";
 
 export default function Home() {
@@ -9,7 +12,18 @@ export default function Home() {
         <Button variant="primary">Print / Download</Button>
       </div>
       <div className="grid grid-cols-3 gap-4">
-        <ReservationDetailsForm />
+        <div className="space-y-4">
+          <ReservationDetailsForm />
+          <VehicleInformationForm />
+        </div>
+        <div className="space-y-4">
+          <CustomerInformationForm />
+          <AdditionalChargesForm />
+        </div>
+        <div className="space-y-4">
+          <ReservationDetailsForm />
+          <VehicleInformationForm />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 export const SELECT_LABEL_STYLES =
-  "appearance-none block text-base font-semibold text-neutral-700";
+  "appearance-none block text-sm font-medium text-neutral-700";
 
 export const customStyles = {
   control: (provided, state) => ({
