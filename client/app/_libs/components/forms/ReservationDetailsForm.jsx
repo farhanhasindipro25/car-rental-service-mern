@@ -11,6 +11,7 @@ export default function ReservationDetailsForm({ formData, setFormData }) {
     }));
   };
 
+  console.log("reservation data", formData);
   return (
     <div className="space-y-4 w-full">
       <h2 className="text-lg font-semibold border-b border-indigo-500">
@@ -36,7 +37,7 @@ export default function ReservationDetailsForm({ formData, setFormData }) {
           name="return_date"
           id="return_date"
           label="Return Date*"
-          value={formData.returnDate || ""}
+          value={formData.return_date || ""}
           onChange={handleChange}
         />
         <div className="flex items-center justify-between">
@@ -55,7 +56,7 @@ export default function ReservationDetailsForm({ formData, setFormData }) {
           name="discount"
           id="discount"
           label="Discount"
-          placeholder="10%"
+          placeholder="10"
           value={formData.discount || ""}
           onChange={handleChange}
         />

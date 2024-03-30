@@ -6,12 +6,27 @@ import CustomerInformationForm from "./_libs/components/forms/CustomerInformatio
 import ReservationDetailsForm from "./_libs/components/forms/ReservationDetailsForm";
 import VehicleInformationForm from "./_libs/components/forms/VehicleInformationForm";
 import Button from "./_libs/components/ui/Button";
+import { createRental } from "./_libs/services/createReservation";
 
 export default function Home() {
   const [reservationDetails, setReservationDetails] = useState({});
   const [vehicleInformation, setVehicleInformation] = useState({});
   const [customerInformation, setCustomerInformation] = useState({});
   const [additionalCharges, setAdditionalCharges] = useState({});
+
+  const handleSubmit = async () => {
+    try {
+      await createRental({
+        reservationDetails,
+        vehicleInformation,
+        customerInformation,
+        additionalCharges,
+      });
+      console.log("created");
+    } catch (error) {
+      console.error("Error creating rental:", error);
+    }
+  };
   return (
     <div className="max-w-7xl mx-auto px-4 py-10 space-y-10">
       <div className="flex items-center justify-between">
@@ -38,6 +53,11 @@ export default function Home() {
             formData={additionalCharges}
             setFormData={setAdditionalCharges}
           />
+          <div className="flex justify-end">
+            <Button variant="secondary" onClick={() => handleSubmit()}>
+              Make Reservation
+            </Button>
+          </div>
         </div>
         <div className="space-y-4">
           <ChargesSummary

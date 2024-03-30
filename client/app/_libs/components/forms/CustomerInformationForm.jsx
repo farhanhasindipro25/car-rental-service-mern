@@ -9,7 +9,7 @@ export default function CustomerInformationForm({ formData, setFormData }) {
       [name]: value,
     }));
   };
-
+  console.log("Customer Info", formData);
   return (
     <div className="space-y-4 w-full">
       <h2 className="text-lg font-semibold border-b border-indigo-500">

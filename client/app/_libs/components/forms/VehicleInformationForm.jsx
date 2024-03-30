@@ -13,12 +13,12 @@ export default function VehicleInformationForm({ formData, setFormData }) {
     queryKey: ["/vehicles"],
     queryFn: () => getVehiclesData(),
   });
-  console.log(data);
   if (isLoading) return <VehicleFormSkeleton />;
   if (isError) return <VehicleFormError />;
   const vehicleOptions = generateLabelAndValueForSearchAndSelectField(data);
   const typeOptions = generateLabelAndValueForVehicleType(data);
 
+  console.log("Vehicle Data", formData);
   const handleVehicleTypeChange = (selectedOption) => {
     setFormData((prevData) => ({
       ...prevData,

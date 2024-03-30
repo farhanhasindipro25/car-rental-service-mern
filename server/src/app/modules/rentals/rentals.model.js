@@ -21,7 +21,7 @@ const rentalSchema = new Schema(
       type: String,
     },
     discount: {
-      type: String,
+      type: Number,
     },
     vehicle_type: {
       type: String,
