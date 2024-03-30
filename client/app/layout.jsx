@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import TanstackQueryProvider from "./_libs/components/providers/TanstackQueryProvider";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
-        <main>{children}</main>
+        <main>
+          <TanstackQueryProvider>{children}</TanstackQueryProvider>
+        </main>
       </body>
     </html>
   );
