@@ -2,6 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const rentalSchema = new Schema(
   {
+    _id: {
+      type: Schema.Types.ObjectId,
+      ref: "Vehicle",
+    },
     reservation_id: {
       type: Number,
     },
@@ -24,8 +28,8 @@ const rentalSchema = new Schema(
       required: true,
     },
     vehicle_id: {
-      type: Schema.Types.ObjectId,
-      ref: "Vehicle",
+      type: String,
+
       required: true,
     },
     first_name: {
