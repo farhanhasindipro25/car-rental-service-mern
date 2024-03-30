@@ -8,6 +8,7 @@ const createRental = async (req, res) => {
     const rental = await POST_RENTAL_TO_DB(req.body);
     res.status(201).json(rental);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: error.message });
   }
 };
